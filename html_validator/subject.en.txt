@@ -1,0 +1,32 @@
+Assignment name  : html_validator
+Expected files   : *.c
+Allowed functions: write, malloc, strncmp, strncpy, free
+--------------------------------------------------------------------------------
+
+Write a program that takes a strings as argument and checks the html tags. 
+You don't need to know html to do this assignment.
+Your program must return a 0 for valid input and prints on the standard output "OK" followed by a newline
+if the expression is correctly bracketed, otherwise it returns 1 and prints "KO" followed by
+a newline.
+
+HTML opening tags look like this:
+<something> and closing tags like this </something>
+
+An opening tag must always be closed by the good closing tag in the
+correct order. 
+
+If there is no arguments, the program must print only a newline.
+
+Examples :
+
+$> ./html_validator '<b><blue></blue></b>'; echo $?
+0
+
+$> ./html_validator '<b><blue></b></blue>'; echo $?
+1
+
+$> ./html_validator '<blue attribute="bladiebla"></blue>'; echo $?
+0
+
+$> ./html_validator '<img bladiebla><blue></blue>'; echo $?
+0
