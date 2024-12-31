@@ -3,7 +3,7 @@ Expected files   : *.c
 Allowed functions: write, malloc, strncmp, strncpy, free
 --------------------------------------------------------------------------------
 
-Write a program that takes a strings as argument and checks the html tags. 
+Write a program that takes a string as argument and checks the html tags. 
 You don't need to know html to do this assignment.
 Your program must return a 0 for valid input and prints on the standard output "OK" followed by a newline
 if the expression is correctly bracketed, otherwise it returns 1 and prints "KO" followed by
