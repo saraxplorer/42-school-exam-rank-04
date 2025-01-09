@@ -1,6 +1,4 @@
 
-#include <stdlib.h>
-
 typedef struct s_tree
 {
     int value;
@@ -11,6 +9,6 @@ typedef struct s_tree
 int tree_sum(t_tree *tree)
 {
     if (!tree)
-        return (NULL);
+        return (0);
     return (tree_sum(tree->left->value + tree_sum(tree->right->value) + tree->value));
 }
