@@ -22,6 +22,21 @@ bool    is_order_matched(char open, char close)
     return (false);
 }
 
+//initialize 2 int to 0
+// 1. index to str [i]
+// 2. index to stack[stack_index]
+// 3. make an int array with 1000 or 100000 ints: stack[10000]
+// while looping through the string--
+// check if it is an opening bracket
+//store it in stack 
+//increase stack
+//then check for closing bracket
+//if found, check if it does not match or stack has already been emptied
+//return false
+//else meaning if matches, decrease stack
+//cause we need to compare the second last with the second
+
+
 bool my_bracket(char *str)
 {
     int i = 0;
