@@ -1,0 +1,19 @@
+Assignment name  : tree_swap
+Expected files   : *.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that swaps the left and right subtrees of a binary tree.
+
+The tree structure is defined as follows:
+
+    typedef struct s_tree
+    {
+        int value;
+        struct s_tree *left;
+        struct s_tree *right;
+    } t_tree;
+
+Function prototype:
+
+    void tree_swap(t_tree *tree);
