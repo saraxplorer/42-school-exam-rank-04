@@ -10,7 +10,7 @@
 
 //KO Example:
 //<ab bc ca> <xy yz zx> </ab> </xy>
-//Stack: ["ab"], ["ab", "xy"]
+//array: ["ab"], ["ab", "xy"]
 
 //In HTML, tags like <img>, <input>, and <br> are void elements (self-closing). 
 //They don’t have corresponding closing tags (</img>), so they:
@@ -63,9 +63,9 @@ int tag_validator(char *str)
     int i = 0;
     int j = 0;
     int start = 0;
-    char **stack;
+    char **array;
     char *temp;
-    stack = (char**)malloc(sizeof(char*) * 100);
+    array = (char**)malloc(sizeof(char*) * 100);
     while (str[i])
     {
         if (str[i] == '<' && str[i + 1] != '/')//it is not a closing part
@@ -74,12 +74,12 @@ int tag_validator(char *str)
             while (str[i] != '>' && str[i] != ' ')//go to the end of first word
                 i++;//now i holds the end of word
             j++;
-            stack[j] = (char*)malloc(sizeof(char) * i - start + 1);
+            array[j] = (char*)malloc(sizeof(char) * i - start + 1);
             strncpy(stack[j], &str[start], i - start);//store the first word
-            stack[j][i - start] = '\0';
-            if (stack[j] && strncmp(stack[j], "img", 3) == 0)//cause in the beginnning
+            array[j][i - start] = '\0';
+            if (array[j] && strncmp(stack[j], "img", 3) == 0)//cause in the beginnning
             {
-                free(stack[j]);
+                free(array[j]);
                 j--;
             }
 
@@ -92,9 +92,9 @@ int tag_validator(char *str)
             temp = (char *)malloc(sizeof(char) * i - start + 1);
             strncpy(temp, &str[start], i - start);
             temp[i - start] = '\0';
-            if (stack[j] && strncmp(stack[j], temp, ft_strlen(temp)) == 0)
+            if (array[j] && strncmp(stack[j], temp, ft_strlen(temp)) == 0)
             {
-                free(stack[j]);
+                free(array[j]);
                 j--;
             }
              else
@@ -116,6 +116,9 @@ int tag_validator(char *str)
 int main(int argc, char **argv)
 {
     if (argc == 1)
-         write(1, "\n", 1); 
+    {
+         write(1, "\n", 1);
+            return (0);//must return here, otherwise segfault
+    }
     return (tag_validator(argv[1]));
 }
