@@ -21,4 +21,9 @@ Function prototype:
 Your function should return a pointer to the node containing the value `num`, 
 if the node is found in the tree. If the value is not found, return `NULL`.
 
+In this binary search tree:
+- Left subtree contains only nodes with values less than the current node.
+- Right subtree contains only nodes with values greater than the current node.
+
+
 
