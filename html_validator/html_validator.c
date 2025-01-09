@@ -92,7 +92,7 @@ int tag_validator(char *str)
             temp = (char *)malloc(sizeof(char) * i - start + 1);
             strncpy(temp, &str[start], i - start);
             temp[i - start] = '\0';
-            if (array[j] && strncmp(stack[j], temp, ft_strlen(temp)) == 0)
+            if (array[j] && strncmp(stack[j], temp, ft_strlen(temp)) == 0)//instead of ft_strlen, i - start works
             {
                 free(array[j]);
                 j--;
