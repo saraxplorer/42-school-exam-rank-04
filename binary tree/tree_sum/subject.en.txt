@@ -1,0 +1,22 @@
+Assignment name  : tree_sum
+Expected files   : *.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that calculates the sum of all values in a binary tree.
+
+The tree structure is defined as follows:
+
+    typedef struct s_tree
+    {
+        int value;
+        struct s_tree *left;
+        struct s_tree *right;
+    } t_tree;
+
+Function prototype:
+
+    int tree_add(t_tree *tree);
+
+If the tree is `NULL`, return `0`.
+The function should return the total sum of all nodes' values in the tree.
