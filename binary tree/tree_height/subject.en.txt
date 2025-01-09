@@ -1,0 +1,21 @@
+Assignment name  : tree_height
+Expected files   : *.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that calculates the height of a binary tree.
+
+The tree structure is defined as follows:
+
+    typedef struct s_tree
+    {
+        int value;
+        struct s_tree *left;
+        struct s_tree *right;
+    } t_tree;
+
+Function prototype:
+
+    int height(t_tree *tree);
+
+The `height` function should return the height of the binary tree, which is the longest path from the root to a leaf node.
