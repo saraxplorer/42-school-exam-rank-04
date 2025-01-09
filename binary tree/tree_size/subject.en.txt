@@ -1,0 +1,33 @@
+<disclaimer: This is not an official question, it is a speculation>
+
+Assignment name  : tree_size
+Expected files   : *.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that calculates the size of a binary tree. The size of a tree 
+is defined as the total number of nodes in the tree, including the root.
+
+The function must be declared as follows:
+
+    int tree_size(t_tree *tree);
+
+Where `t_tree` is defined as:
+
+    typedef struct s_tree
+    {
+        int value;
+        struct s_tree *left;
+        struct s_tree *right;
+    } t_tree;
+
+- If the tree is empty (i.e., `tree` is `NULL`), the function should return `0`.
+- Otherwise, it should return the total number of nodes in the tree.
+
+Examples:
+
+Input tree:
+        1
+       / \
+      2   3
+
