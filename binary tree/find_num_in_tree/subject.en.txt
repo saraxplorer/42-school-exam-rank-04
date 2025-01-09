@@ -1,0 +1,24 @@
+Assignment name  : find_number_in_tree
+Expected files   : *.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that searches for a number in a binary search tree (BST).
+
+The tree structure is defined as follows:
+
+    typedef struct s_tree
+    {
+        int value;
+        struct s_tree *left;
+        struct s_tree *right;
+    } t_tree;
+
+Function prototype:
+
+    t_tree *find_num(t_tree *tree, int num);
+
+Your function should return a pointer to the node containing the value `num`, 
+if the node is found in the tree. If the value is not found, return `NULL`.
+
+
