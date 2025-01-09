@@ -1,0 +1,19 @@
+Assignment name  : find_smallest_value
+Expected files   : *.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that finds the smallest value in a binary tree.
+
+The tree structure is defined as follows:
+
+    typedef struct s_tree
+    {
+        int value;
+        struct s_tree *left;
+        struct s_tree *right;
+    } t_tree;
+
+Function prototype:
+
+    int smallest_value(t_tree *tree);
