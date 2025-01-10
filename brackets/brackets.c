@@ -41,24 +41,24 @@ bool my_bracket(char *str)
 {
     int i = 0;
     int stack[10000];
-    int stack_index = 0;
+    int j = 0; //stack_index
     while (str[i])
     {
         if (is_open(str[i]) == true)
         {
-            stack[stack_index] = str[i];
-            stack_index++;
+            stack[j] = str[i];
+            j++;
         }
         if (is_close(str[i]) == true)
         {
-            if (stack_index == 0 || is_order_matched(stack[stack_index - 1], str[i]) == false)
+            if (j == 0 || is_order_matched(stack[j - 1], str[i]) == false)
                 return (false);
             else
-                stack_index--;
+                j--;
         }
         i++;
     }
-    if (stack_index != 0)
+    if (j != 0)
         return (false);
     return (true);
 }
