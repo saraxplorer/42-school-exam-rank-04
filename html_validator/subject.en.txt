@@ -5,9 +5,8 @@ Allowed functions: write, malloc, strncmp, strncpy, free
 
 Write a program that takes a string as argument and checks the html tags. 
 You don't need to know html to do this assignment.
-Your program must return a 0 for valid input and prints on the standard output "OK" followed by a newline
-if the expression is correctly bracketed, otherwise it returns 1 and prints "KO" followed by
-a newline.
+Your program must return a 0 for valid input meaning
+if the expression is correctly bracketed, otherwise it returns 1
 
 HTML opening tags look like this:
 <something> and closing tags like this </something>
@@ -30,3 +29,6 @@ $> ./html_validator '<blue attribute="bladiebla"></blue>'; echo $?
 
 $> ./html_validator '<img bladiebla><blue></blue>'; echo $?
 0
+
+$> ./html_validator "<html><head>";echo $?
+1
