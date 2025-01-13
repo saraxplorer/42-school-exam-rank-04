@@ -66,9 +66,9 @@ int tag_validator(char *str)
                 i++;//now i holds the end of word
             j++;
             array[j] = (char*)malloc(sizeof(char) * i - start + 1);
-            strncpy(stack[j], &str[start], i - start);//store the first word
+            strncpy(array[j], &str[start], i - start);//store the first word
             array[j][i - start] = '\0';
-            if (array[j] && strncmp(stack[j], "img", 3) == 0)//cause in the beginnning
+            if (array[j] && strncmp(array[j], "img", 3) == 0)//cause in the beginnning
             {
                 free(array[j]);
                 j--;
@@ -83,20 +83,18 @@ int tag_validator(char *str)
             temp = (char *)malloc(sizeof(char) * i - start + 1);
             strncpy(temp, &str[start], i - start);
             temp[i - start] = '\0';
-            if (array[j] && strncmp(stack[j], temp, i - start) == 0)
+            if (array[j] && strncmp(array[j], temp, i - start) == 0)
             {
                 free(array[j]);
                 j--;
             }
              else
-            {
-                write (1, "KO\n", 3);
                 return (1);
-            }
         }
         i++;
     }
-    write (1, "OK\n", 3);
+	if (array[j] != 0) //this checks if array[j] has not been emptied, meaning we did not get any closing tags
+		return (1);
     return (0);
 
 }
