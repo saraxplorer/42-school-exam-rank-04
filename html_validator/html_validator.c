@@ -17,15 +17,6 @@
 //Don’t need to remain on the stack.
 //So Are "removed" immediately after being identified.
 
-int ft_strlen(char *str)
-{
-    int i = 0;
-    while (str[i])
-        i++;
-    return i;
-}
-
-
 //basic structure
 //initialize a char **array and a char *temporary string
 //initialize 3 int to 0
@@ -92,7 +83,7 @@ int tag_validator(char *str)
             temp = (char *)malloc(sizeof(char) * i - start + 1);
             strncpy(temp, &str[start], i - start);
             temp[i - start] = '\0';
-            if (array[j] && strncmp(stack[j], temp, ft_strlen(temp)) == 0)//instead of ft_strlen, i - start works
+            if (array[j] && strncmp(stack[j], temp, i - start) == 0)
             {
                 free(array[j]);
                 j--;
